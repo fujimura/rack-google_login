@@ -19,14 +19,13 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  # TODO Specify version
-  s.add_dependency "rack"
-  s.add_dependency "sinatra"
-  s.add_dependency "httpclient"
-  s.add_dependency "rack-oauth2"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "rack-test"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "webmock"
+  s.add_dependency "rack",        '>= 1.4.1'
+  s.add_dependency "sinatra",     '>= 1.3.2'
+  s.add_dependency "httpclient",  '>= 2.2.4'
+  s.add_dependency "rack-oauth2", '>= 0.11.0'
+  s.add_development_dependency "rake",      '>= 0.9.2.2'
+  s.add_development_dependency "rack-test", '>= 0.6.1'
+  s.add_development_dependency "rspec",     '>= 2.8.0'
+  s.add_development_dependency "webmock",   '>= 1.8.6'
   s.add_development_dependency "pry"
 end
