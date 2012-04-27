@@ -1,4 +1,4 @@
-# rack-google_login
+# rack-google_login [<img src="https://secure.travis-ci.org/fujimura/rack-google_login.png"/>](http://travis-ci.org/fujimura/rack-google_login)
 
 ## Minimalist login for rack app with Google account
 
