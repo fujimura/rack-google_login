@@ -1,0 +1,27 @@
+# rack-google_login
+
+## Minimalist login for rack app with Google account
+
+## What is it?
+
+## Requirements
+
+## Installation
+
+## How to use
+
+## Sample
+
+## TODO
+
+* Finish README
+* Make some sample app
+* Fix TODOs in code
+
+## Contribution
+
+All kind of pull requests are very welcome ;-)
+
+## License
+
+MIT Licence
