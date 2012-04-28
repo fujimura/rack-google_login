@@ -1,7 +1,6 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'sinatra'
-require 'google_login/version'
 require 'google_login/oauth_client'
 
 module Rack
