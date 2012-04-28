@@ -1,0 +1,4 @@
+session_secret: "175770334458.apps.googleusercontent.com"
+identifier: '175770334458@developer.gserviceaccount.com'
+secret: 'X_Oacs_Jw2btGqVcdbpAf9Og'
+redirect_uri: 'http://localhost:3000/callback'
