@@ -1,10 +1,9 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "rack/google_login/version"
 
 Gem::Specification.new do |s|
   s.name        = "rack-google_login"
-  s.version     = Rack::GoogleLogin::VERSION
+  s.version     = '0.0.1'
   s.authors     = ["Fujimura Daisuke"]
   s.email       = ["me@fujimuradaisuke.com"]
   s.homepage    = "https://github.com/fujimura/rack-google_login"
