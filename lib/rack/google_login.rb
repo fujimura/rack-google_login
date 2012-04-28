@@ -1,12 +1,13 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'sinatra'
+require 'google_login/configuration'
 require 'google_login/oauth_client'
 
 module Rack
   class GoogleLogin < Sinatra::Base
 
-    @@config = {}
+    @@config = Configuration.new
 
     def initialize(app = nil)
       super
