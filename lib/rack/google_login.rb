@@ -15,10 +15,6 @@ module Rack
       self.class.enable :sessions
     end
 
-    get '/login' do
-      %Q|<a href="#{oauth_client.authorization_uri}">Please login</a>|
-    end
-
     get '/logout' do
       session['user_info'] = nil
       redirect '/'
@@ -31,10 +27,18 @@ module Rack
     end
 
     def oauth_client
-      @_c ||= Rack::OAuth2::Client::Google.new(
+      @_c ||= self.class.oauth_client
+    end
+
+    def self.oauth_client
+      Rack::OAuth2::Client::Google.new(
         :identifier   => config['identifier'],
         :secret       => config['secret'],
         :redirect_uri => config['redirect_uri'])
+    end
+
+    def self.authorization_uri
+      oauth_client.authorization_uri
     end
 
     def config

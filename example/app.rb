@@ -5,11 +5,15 @@ require 'haml'
 enable :inline_templates
 
 before do
-  redirect '/login' unless session['user_info']
+  redirect '/login' unless session['user_info'] || request.path == '/login'
 end
 
 get '/' do
   haml :index
+end
+
+get '/login' do
+  %Q|<a href="#{Rack::GoogleLogin.authorization_uri}">Please login</a>|
 end
 
 __END__
