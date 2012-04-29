@@ -15,7 +15,6 @@
 ## TODO
 
 * Finish README
-* Fix TODOs in code
 * Use refresh token
 * Write request spec
 * Make scopes configurable

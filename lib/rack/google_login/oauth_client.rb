@@ -18,14 +18,12 @@ class Rack::OAuth2::Client::Google < Rack::OAuth2::Client
 
   def authorize! code
     self.authorization_code = code
-    #TODO Rescue exception raises with invalid code
     @access_token = self.access_token! :not_basic_auth
   end
 
 
   def user_info
     @_user_info ||= \
-      #TODO Rescue JSON parse error and HTTP error
       JSON.parse \
       HTTPClient.new.get_content('https://www.googleapis.com/oauth2/v1/userinfo',
                                  :access_token => @access_token.access_token)
