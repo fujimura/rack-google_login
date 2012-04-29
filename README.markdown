@@ -15,9 +15,10 @@
 ## TODO
 
 * Finish README
+* Configurable root
 * Use refresh token
-* Write request spec
 * Make scopes configurable
+* Add more session store
 
 ## Contribution
 

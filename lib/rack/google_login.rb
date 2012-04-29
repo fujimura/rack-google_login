@@ -15,7 +15,6 @@ module Rack
       self.class.enable :sessions
     end
 
-
     get '/login' do
       %Q|<a href="#{oauth_client.authorization_uri}">Please login</a>|
     end
