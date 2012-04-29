@@ -2,4 +2,3 @@ source "http://rubygems.org"
 
 gem 'rack-google_login', :git => 'git://github.com/fujimura/rack-google_login.git'
 gem 'sinatra'
-gem 'haml'

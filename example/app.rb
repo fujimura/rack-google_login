@@ -1,15 +1,15 @@
-require 'bundler'
-Bundler.require
+require 'bundler/setup'
 require 'sinatra'
-require 'haml'
 enable :inline_templates
 
 before do
-  redirect '/login' unless session['user_info'] || request.path == '/login'
+  if session['user_info'].nil? && request.path != '/login'
+    redirect '/login'
+  end
 end
 
 get '/' do
-  haml :index
+  erb :index
 end
 
 get '/login' do
@@ -23,14 +23,17 @@ end
 
 __END__
 
-@@ layout
-%html
-  = yield
-
 @@ index
-- session['user_info'].each do |key, value|
-  %dl
-    %dt= key
-    %dd= value
-%p
-  %a{:href => '/logout'}Logout
+<html>
+  <body>
+    <% session['user_info'].each do |key, value| %>
+      <dl>
+        <dt><%= key %></dt>
+        <dd><%= value %></dd>
+      </dl>
+    <% end %>
+    <p>
+      <a href='/logout'>Logout</a>
+    </p>
+  </body>
+</html>
