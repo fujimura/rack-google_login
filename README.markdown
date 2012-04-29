@@ -6,11 +6,11 @@
 
 Add to gemfile
 
-  gem 'rack-google\_login'
+    gem 'rack-google_login'
 
 or install with
 
-  gem install rack-google\_login
+    gem install rack-google_login
 
 ## How to use
 
@@ -23,8 +23,8 @@ Use `Rack::GoogleLogin.authorization_uri` to get uri of Google OAuth 2.0 authoiz
 [example](https://github.com/fujimura/rack-google_login/blob/master/example/app.rb#L15)
 
 * Controll access with `session['user_info']`
+Redirect user who is not authorized to login page.
 If `user_info` was not found in `session`, the user is not yet authorized with Google.
-Redirect them to login page.
 [example](https://github.com/fujimura/rack-google_login/blob/master/example/app.rb#L5)
 
 
@@ -36,7 +36,6 @@ Simple sinatra app can be found [here](https://github.com/fujimura/rack-google_l
 
 ## TODO
 
-* Finish README
 * Configurable root
 * Use refresh token
 * Make scopes configurable
