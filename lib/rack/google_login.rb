@@ -18,7 +18,7 @@ module Rack
     get '/callback' do
       oauth_client.authorize! params['code']
       session['user_info'] = oauth_client.user_info
-      redirect (session.delete(:return_to) || '/')
+      redirect (session.delete('return_to') || '/')
     end
 
     def oauth_client
