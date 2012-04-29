@@ -24,12 +24,11 @@ class Rack::OAuth2::Client::Google < Rack::OAuth2::Client
 
 
   def user_info
-    #TODO memoize
-    c = HTTPClient.new
-    #TODO Rescue JSON parse error and HTTP error
-    JSON.parse \
-      c.get_content('https://www.googleapis.com/oauth2/v1/userinfo',
-                    :access_token => @access_token.access_token)
+    @_user_info ||= \
+      #TODO Rescue JSON parse error and HTTP error
+      JSON.parse \
+      HTTPClient.new.get_content('https://www.googleapis.com/oauth2/v1/userinfo',
+                                 :access_token => @access_token.access_token)
   end
 
 end

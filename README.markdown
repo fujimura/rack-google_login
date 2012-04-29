@@ -15,7 +15,6 @@
 ## TODO
 
 * Finish README
-* Make some sample app
 * Fix TODOs in code
 * Use refresh token
 * Write request spec
