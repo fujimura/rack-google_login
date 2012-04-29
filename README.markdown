@@ -2,15 +2,37 @@
 
 ## Minimalist login for rack app with Google account
 
-## What is it?
-
-## Requirements
-
 ## Installation
+
+Add to gemfile
+
+  gem 'rack-google\_login'
+
+or install with
+
+  gem install rack-google\_login
 
 ## How to use
 
-## Sample
+* Mount it
+Mount before the main app and put configuration hash into it.
+[example](https://github.com/fujimura/rack-google_login/blob/master/example/config.ru)
+
+* Create login page
+Use `Rack::GoogleLogin.authorization_uri` to get uri of Google OAuth 2.0 authoization endpoint.
+[example](https://github.com/fujimura/rack-google_login/blob/master/example/app.rb#L15)
+
+* Controll access with `session['user_info']`
+If `user_info` was not found in `session`, the user is not yet authorized with Google.
+Redirect them to login page.
+[example](https://github.com/fujimura/rack-google_login/blob/master/example/app.rb#L5)
+
+
+* Use `user_info`
+[example](https://github.com/fujimura/rack-google_login/blob/master/example/app.rb#L29)
+
+## Example
+Simple sinatra app can be found [here](https://github.com/fujimura/rack-google_login/tree/master/example).
 
 ## TODO
 
