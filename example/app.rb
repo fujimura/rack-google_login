@@ -16,6 +16,11 @@ get '/login' do
   %Q|<a href="#{Rack::GoogleLogin.authorization_uri}">Please login</a>|
 end
 
+get '/logout' do
+  session['user_info'] = nil
+  redirect '/'
+end
+
 __END__
 
 @@ layout

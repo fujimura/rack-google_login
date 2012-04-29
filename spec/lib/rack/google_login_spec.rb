@@ -20,29 +20,6 @@ describe Rack::GoogleLogin do
     Rack::GoogleLogin.any_instance.stub(:oauth_client).and_return oauth_client
   end
 
-  describe 'GET /login' do
-    let(:uri) { 'http://google.com/auth' }
-    before do
-      oauth_client.should_receive(:authorization_uri).and_return uri
-      get '/login'
-    end
-    it 'should render link to authorization endpoint' do
-      last_response.body.should =~ /#{uri}/
-    end
-  end
-
-  describe 'GET /logout' do
-    it 'should delete :user_info in session' do
-      session['user_info'] = {'email' => 'abc@def.com'}
-      get '/logout'
-      session['user_info'].should be_nil
-    end
-    it 'should redirect to /' do
-      get '/logout'
-      should redirect_to url_for '/'
-    end
-  end
-
   describe 'GET /callback' do
     let(:code) { 'some code' }
     let(:user_info) { { 'email' => 'abc@def.com' } }

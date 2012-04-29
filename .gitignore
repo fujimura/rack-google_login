@@ -3,3 +3,5 @@
 Gemfile.lock
 pkg/*
 example/config/config.yml
+.yardoc
+doc/

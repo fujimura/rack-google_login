@@ -15,11 +15,6 @@ module Rack
       self.class.enable :sessions
     end
 
-    get '/logout' do
-      session['user_info'] = nil
-      redirect '/'
-    end
-
     get '/callback' do
       oauth_client.authorize! params['code']
       session['user_info'] = oauth_client.user_info
