@@ -19,7 +19,7 @@ class Rack::OAuth2::Client::Google < Rack::OAuth2::Client
   def authorize! code
     self.authorization_code = code
     #TODO Rescue exception raises with invalid code
-    @access_token = self.access_token!
+    @access_token = self.access_token! :not_basic_auth
   end
 
 

@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rack",        '>= 1.4.1'
   s.add_dependency "sinatra",     '>= 1.3.2'
   s.add_dependency "httpclient",  '>= 2.2.4'
-  s.add_dependency "rack-oauth2", '>= 0.11.0'
+  s.add_dependency "rack-oauth2", '>= 0.14.4'
   s.add_development_dependency "rake",      '>= 0.9.2.2'
   s.add_development_dependency "rack-test", '>= 0.6.1'
   s.add_development_dependency "rspec",     '>= 2.8.0'
