@@ -33,7 +33,7 @@ describe Rack::GoogleLogin do
     end
     context 'if return_to was set to /somewhere' do
       it 'should redirect to /somehere' do
-        session[:return_to] = '/somewhere'
+        session['return_to'] = '/somewhere'
         get '/callback', 'code' => code
         should redirect_to url_for '/somewhere'
       end
