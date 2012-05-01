@@ -35,14 +35,14 @@ describe Rack::GoogleLogin do
       it 'should redirect to /somehere' do
         session['return_to'] = '/somewhere'
         get '/callback', 'code' => code
-        should redirect_to url_for '/somewhere'
+        should redirect_to '/somewhere'
       end
     end
     context 'if return_to was not set to session' do
       it 'should redirect to /' do
         session[:return_to].should == nil
         get '/callback', 'code' => code
-        should redirect_to url_for '/'
+        should redirect_to '/'
       end
     end
   end

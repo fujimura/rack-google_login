@@ -17,14 +17,15 @@ end
 RSpec::Matchers.define :redirect_to do |expected_path|
   @expected_path = expected_path
   match do
-    actual_uri = last_response.header['Location']
-    next false unless actual
+    @actual_path = URI.parse(last_response.header['Location']).path
+
+    next false unless @actual_path
 
     case @expected_path
     when Regexp
-      actual_uri =~ expected_path
+      @actual_path =~ expected_path
     when String
-      actual_uri == expected_path
+      @actual_path == expected_path
     else
       raise
     end
